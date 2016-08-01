@@ -1,0 +1,199 @@
+<section>
+  <div class="container">
+    <div class="ufl-whiteBg">
+      <div class="row">
+        <div class="col-sm-12 uf-accountForm">
+          <div class="clearfix">&nbsp;</div>
+          <div class="clearfix">&nbsp;</div>
+          <div class="col-md-10 col-sm-offset-1">
+            <div class="row">
+              <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
+                <h2 class="title"><span translate="signup.title">Register your account</span></h2>
+                <form role="form" name="signupForm" ng-submit="signup()" novalidate>
+
+                  <div class="alert alert-success alert-dismissible" role="alert" ng-if="successDiv">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Well done!</strong> {{success}}
+                  </div>
+                  <div class="alert alert-danger alert-dismissible" role="alert" ng-if="errorDiv">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <p>{{error}}</p>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <input type="text" id="su_username" name="username" class="form-control input-md"
+                               ng-model="user.username" ng-minlength="8" required>
+                        <span class="inputBar"></span>
+                        <label translate="signup.form.username">Username</label>
+                        <span class="text-danger" ng-show="signupForm.username.$dirty && signupForm.username.$invalid">
+                          <span ng-show="signupForm.username.$error.required" translate="signup.messages.validate.username.required">Username is required.</span>
+                          <span ng-show="signupForm.username.$error.minlength" translate="signup.messages.validate.username.minlength">Username must be at least 8 characters.</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <input type="email" name="email" id="su_email" class="form-control input-md"
+                               ng-model="user.email" required>
+                        <span class="inputBar"></span>
+                        <label translate="signup.form.email">Email Address</label>
+                        <span class="text-danger" ng-show="signupForm.email.$dirty && signupForm.email.$invalid">
+                          <span ng-show="signupForm.email.$error.required" translate="signup.messages.validate.email.required">Email is required.</span>
+                          <span ng-show="signupForm.email.$error.email" translate="signup.messages.validate.email.invalid">Invalid email address.</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <input type="text" id="su_firstName" name="firstName" class="form-control input-md"
+                               ng-model="user.firstName" required>
+                        <span class="inputBar"></span>
+                        <label translate="signup.form.firstName">First Name</label>
+                        <span class="text-danger" ng-show="signupForm.firstName.$dirty && signupForm.firstName.$invalid">
+                          <span ng-show="signupForm.firstName.$error.required" translate="signup.messages.validate.firstName.required">First Name is required.</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <input type="text" id="su_lastName" name="lastName" class="form-control input-md"
+                               ng-model="user.lastName" required>
+                        <span class="inputBar"></span>
+                        <label translate="signup.form.lastName">Last Name</label>
+                        <span class="text-danger" ng-show="signupForm.lastName.$dirty && signupForm.lastName.$invalid">
+                          <span ng-show="signupForm.lastName.$error.required" translate="signup.messages.validate.lastName">Last Name is required.</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                 
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <input type="password" name="password" id="su_password" class="form-control input-md"
+                               ng-model="user.password" ng-minlength="8" required>
+                        <span class="inputBar"></span>
+                        <label translate="global.form.password">Password</label>
+                        <span class="text-danger" ng-show="signupForm.password.$dirty && signupForm.password.$invalid">
+                          <span ng-show="signupForm.password.$error.required" translate="global.messages.validate.password.required">Password required.</span>
+                          <span ng-show="signupForm.password.$error.minlength" translate="global.messages.validate.password.minlength">Password must be at lest 8 characters</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <input id="su_matchingPassword" type="password" name="matchingPassword" class="form-control input-md"
+                               ng-model="user.matchingPassword" ufl-password-matcher="su_password" required>
+                        <span class="inputBar"></span>
+                        <label translate="global.form.confirmPassword">Confirm Password</label>
+                        <span class="text-danger"  ng-show="signupForm.matchingPassword.$dirty && (signupForm.matchingPassword.$invalid || signupform.matchingPassword.$error.passwordMatch)">
+                          <span ng-show="signupForm.matchingPassword.$error.required" translate="global.messages.validate.confirmPassword.required">Confirm Password required.</span>
+                          <span ng-show="signupForm.matchingPassword.$error.passwordMatch" translate="global.messages.validate.confirmPassword.match">   Passwords don't match.  </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+      
+
+
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <input type="text"
+                               class="form-control"
+                               id="taskDate"
+                               name="taskDate"
+                               placeholder="Date"
+                               ng-model="user.dateOfBirth"
+                               data-date-format="yyyy-MM-dd"
+                               data-date-type="number"
+                               data-max-date="today"
+                               data-autoclose="1"
+                               bs-datepicker
+                               required>
+                        <span class="inputBar"></span>
+                        <label >Date of Birth</label>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <select name="gender" id="gender" class="form-control"
+                        ng-model="user.gender"
+                        ng-options="op.value as op.name for op in gender"
+                        required>
+                      </select>
+                        <span class="inputBar"></span>
+                        <label >Gender</label>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                      <div class="clearfix">&nbsp;</div>
+                      <div class="inputGroup">
+                        <Textarea type="text" name="about" id="about" class="form-control input-md"
+                               ng-model="user.about" ng-minlength="20" required />
+                        <span class="inputBar"></span>
+                        <label >About You</label>
+                        <span class="text-danger" ng-show="signupForm.about.$dirty && signupForm.about.$invalid">
+                          <span ng-show="signupForm.password.$error.required" translate="global.messages.validate.about.required">About yourself is required.</span>
+                          <span ng-show="signupForm.about.$error.minlength" translate="global.messages.validate.about.minlength">About yourself must be at lest 20 characters</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="clearfix">&nbsp;</div>
+                  <hr class="colorgraph">
+
+                  <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                      <a ui-sref="login" >Already a member?</a>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+
+
+                      <button type="submit" class="btn btn-custom btn-lg btn-block" 
+                              ng-disabled="signupForm.$invalid || dataLoading ">
+                        <i  ng-show="dataLoading" class="fa fa-refresh fa-spin"></i>
+                        <span >Sign up</span></button>
+                    </div>
+                  </div>
+                  <div class="clearfix">&nbsp;</div>
+                  <div class="clearfix">&nbsp;</div>
+                  <div class="text-center">
+                    <span class="text-muted" ></span>
+                  </div>
+                </form>
+                <div class="clearfix">&nbsp;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ufl-whiteBg borderBottom">&nbsp;</div>
+  </div>
+</section>

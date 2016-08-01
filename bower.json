@@ -1,0 +1,16 @@
+{
+  "name": "angular-starter",
+  "description": "AngularJS app starter",
+  "version": "0.0.1",
+  "homepage": "https://github.com/popularowl/angular-starter",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route":"^1.5.0",
+    "angular-mocks":"^1.5.0",    
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "angular-strap": "^2.3.7",
+    "angular-translate-storage-cookie": "^2.11.0"
+  }
+}

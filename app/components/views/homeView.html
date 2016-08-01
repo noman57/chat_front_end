@@ -1,0 +1,70 @@
+<div class="center" ng-if="!profile">
+	<div ng-init=redirectlogin()>AngularJs application</div>
+</div>
+<div class="center" ng-if="profile">
+
+	 <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+         
+
+        <A href="edit.html" >{{profile.username}}</A>
+       <br>
+<p class=" text-info">May 05,2014,03:00 pm </p>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Welcome  {{profile.username}}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Profile" class="img-circle img-responsive"> </div>
+                
+               
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Name :</td>
+                        <td>{{profile.firstName }}  {{profile.lastName}}</td>
+                      </tr>
+                     
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>{{profile.dateOfBirth |date:'MM/dd/yyyy'}}</td>
+                      </tr>
+                   
+                         <tr>
+                             <tr>
+                        <td>Gender</td>
+                        <td><strong>{{profile.gender}}</strong></td>
+                     
+                      <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:{{profile.email}}">{{profile.email}}/a></td>
+                      </tr>
+                        <td>Member Since</td>
+                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                        </td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                 
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+                        
+                        <span class="pull-right">
+                           
+                        </span>
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+</div>

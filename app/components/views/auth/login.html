@@ -1,0 +1,61 @@
+<section id="login">
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="form-wrap">
+                <h1>Log in with your email account</h1>
+                    <form id="loginForm" name="loginForm"  class="form-horizontal" role="form" ng-submit="login()"  novalidate>
+
+                          <div class="alert alert-success alert-dismissible" role="alert" ng-if="$stateParams.msg">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Well done!</strong> {{$stateParams.msg}}
+                          </div>
+
+                          <div class="alert alert-success alert-dismissible" role="alert" ng-if="sucessdiv">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Well done!</strong> {{success}}
+                          </div>
+                          <div class="alert alert-danger alert-dismissible" role="alert" ng-if="errorDiv">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <p>{{error}}</p>
+                          </div>
+                        <div class="form-group">
+                            <label for="userid" class="sr-only">username</label>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="username or email " ng-model="user.username" required >
+
+                            <span class="text-danger" ng-show="loginForm.username.$dirty && loginForm.username.$invalid">
+                              <span ng-show="loginForm.username.$error.required" >User ID required</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" ng-model="user.password" required>
+                            <span class="text-danger" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+                            <span ng-show="loginForm.password.$error.required" translate="global.messages.validate.password">Password required</span>
+                          </span>
+                        </div>
+                        <div class="checkbox">
+                           
+                             <input type="checkbox" name="remember" ng-model="user.remember"
+                               value="1"> <span >Remember Me</span>
+                        </div>
+
+
+                       
+
+
+                        <button type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" 
+                                ng-disabled="loginForm.$invalid || dataLoading ">
+                          <i  ng-show="dataLoading" class="fa fa-refresh fa-spin"></i>
+                          <span >Login</span></button>
+                    </form>
+
+
+                    <a ui-sref="signup" class="forget"  >Not a member yet ?</a>
+                    <hr>
+              </div>
+        </div> <!-- /.col-xs-12 -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
+

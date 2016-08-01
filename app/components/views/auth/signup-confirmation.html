@@ -1,0 +1,28 @@
+<section>
+  <div class="container">
+    <div class="ufl-whiteBg">
+      <div class="row">
+        <div class="col-sm-12 uf-accountForm">
+          <div class="clearfix">&nbsp;</div>
+          <div class="clearfix">&nbsp;</div>
+          <div class="col-md-10 col-sm-offset-1">
+            <div class="row" ng-init="signupConfirmation()">
+              <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
+                <div class="well">
+                  <div class="clearfix">&nbsp;</div>
+                  <h3 class="text-center" ng-if="successDiv">
+                    <span class="text-success">Welcome!</span> {{success}} Go to the
+                    <a ui-sref="login">login page</a> to logged in to Ufril</h3>
+
+                  <h3 class="text-center" ng-if="errorDiv"><span class="text-success">Sorry!</span> {{error}}</h3>
+                  <div class="clearfix">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ufl-whiteBg borderBottom">&nbsp;</div>
+  </div>
+</section>

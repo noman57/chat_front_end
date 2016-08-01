@@ -1,0 +1,29 @@
+<section>
+  <div class="container">
+    <div class="ufl-whiteBg">
+      <div class="row">
+        <div class="col-sm-12 uf-accountForm">
+          <div class="clearfix">&nbsp;</div>
+          <div class="clearfix">&nbsp;</div>
+          <div class="col-md-10 col-sm-offset-1">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+             
+              <li role="presentation" ui-sref-active="active">
+                <a ui-sref=".signup" aria-controls="register" role="tab" data-toggle="tab">Register</a>
+              </li>
+              <li role="presentation" ui-sref-active="active">
+                <a ui-sref=".resetPassword" aria-controls="resetPassword" role="tab" data-toggle="tab">Reset password</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div ui-view></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ufl-whiteBg borderBottom">&nbsp;</div>
+  </div>
+</section>
