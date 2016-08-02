@@ -1,6 +1,6 @@
 ## ANGULAR Login module 
 
-### This app contains all the basic setup you need to create a login application . with a rest api attached also .
+### This app contains all the basic setup you need to create a login application  pairs with a spring boot login rest usable in any cross platfrom  .
 
 Architecture is designed in such a way that you wont have to  think about security and  configuration any more . 
 

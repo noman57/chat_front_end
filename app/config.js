@@ -1,7 +1,9 @@
 "use strict";
 
+// add here any constant variable you want to use in your application
+
  angular.module('config', [])
 
-.constant('ENV', {name:'testing',webClientUrl:'http://localhost:9000',apiEndpoint:'http://localhost:8080/v1/',webServerUrl:'http://ufriil.com:9004',mapApiKey:'AIzaSyBRQ94IT89yAZrbehYLh_xEWRTJi4mSwzs'})
+.constant('ENV', {name:'testing',apiEndpoint:'http://ufriil.com:8765/v1/'})
 
 ;
