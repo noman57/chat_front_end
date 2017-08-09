@@ -6,7 +6,7 @@ var myAPP = angular.module('myApp',[
     'ngCookies',
     'config',
 	  'ui.router',
-    'mgcrea.ngStrap']);
+    'mgcrea.ngStrap','ngStomp']);
 
 myAPP.config(function($routeProvider,$urlRouterProvider, $stateProvider, $locationProvider, $httpProvider) {
 	

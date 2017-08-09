@@ -30,7 +30,7 @@ angular.module('myApp')
         function errorCallback(response) {
           $scope.dataLoading = false;
           $scope.errorDiv = true;
-          $scope.error = response.data.error.detail;
+          $scope.error = response.data.message;
           console.log('failed  test' + response.statusText);
           console.log('Detail ' + response.data.error.detail);
           console.log(response);

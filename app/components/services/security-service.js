@@ -50,25 +50,4 @@ var app = angular.module('myApp');
 
   });
 
-  /*app.factory("Access", function($q, SecurityService) {
-    //var user = {};
-    var Access = {
-      OK: 200,
-      UNAUTHORIZED: 401,
-      FORBIDDEN: 403,
-
-      isAnonymous: function() {
-        var deferred = $q.defer();
-        console.log('testing');
-        console.log(SecurityService.isLoggedIn());
-        if(!SecurityService.isLoggedIn() ) {
-          deferred.resolve(Access.OK);
-        } else {
-          deferred.reject(Access.FORBIDDEN);
-        }
-        return deferred.promise;
-      }
-    };
-
-    return Access;
-  });*/
+ 

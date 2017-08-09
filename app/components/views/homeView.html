@@ -1,5 +1,5 @@
 <div class="center" ng-if="!profile">
-	<div ng-init=redirectlogin()>AngularJs application</div>
+	<div ng-init=redirectlogin()>Chat  application</div>
 </div>
 <div class="center" ng-if="profile">
 
@@ -7,9 +7,9 @@
       <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
          
 
-        <A href="edit.html" >{{profile.username}}</A>
+        <A href="#" >{{profile.username}}</A>
        <br>
-<p class=" text-info">May 05,2014,03:00 pm </p>
+<p class=" text-info">{{date}} </p>
       </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad" >
    
@@ -30,37 +30,102 @@
                         <td>Name :</td>
                         <td>{{profile.firstName }}  {{profile.lastName}}</td>
                       </tr>
-                     
-                      <tr>
-                        <td>Date of Birth</td>
-                        <td>{{profile.dateOfBirth |date:'MM/dd/yyyy'}}</td>
-                      </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Gender</td>
-                        <td><strong>{{profile.gender}}</strong></td>
-                     
+                       
                       <tr>
                         <td>Email</td>
-                        <td><a href="mailto:{{profile.email}}">{{profile.email}}/a></td>
+                        <td><a href="mailto:{{profile.email}}">{{profile.email}}</a></td>
                       </tr>
-                        <td>Member Since</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+
+                      <tr>
+                        <td>Chat With </td>
+                        <td>  <input type="text" name="username" id="username" class="form-control" placeholder="use testuser1 to testuser5" ng-model="msg.to"  ng-disabled="chat.with" required > 
+                        <input type="button"  value="connect"  class=" btn btn-default form-control" ng-click="startChat()">
+                         <input type="button"  value="Refresh"  class=" btn btn-default form-control" ng-click="refresh()">
+
+
                         </td>
-                           
+
                       </tr>
+
+                       <tr ng-if=(chat.with)>
+
+                        <td class="text-success">
+                                You are now connected with {{chat.with}}  
+                            
+                          </td>
+                          <td></td>
+                      </tr>
+                        
                      
                     </tbody>
                   </table>
+
+
+                  <div class="container" ng-if=(chat.with)>
+    <div class="row form-group">
+        <div class="col-xs-8 col-md-8 col-lg-8 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> Chat window
+                    
+                </div>
+                <div class="panel-body body-panel">
+                    <ul class="chat">
+
+                    <div ng-repeat="itemChat in conversation track by $index"> 
+                     
+
+                       <li ng-if="itemChat.from!=profile.username" class="left clearfix"><span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">{{itemChat.from}}</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span></small>
+                                </div>
+                                <p>
+                                    {{itemChat.text}}
+                                </p>
+                            </div>
+                        </li>
+                        <li ng-if="itemChat.from==profile.username"  class="right clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span></small>
+                                    <strong class="pull-right primary-font">{{itemChat.from}}</strong>
+                                </div>
+                                <p>
+                                    {{itemChat.text}}
+                                </p>
+                            </div>
+                        </li>
+
+                    </div>
+                       
+                        
+                    </ul>
+                </div>
+                <div class="panel-footer clearfix">
+                    <textarea class="form-control" rows="3" ng-model="msg.text"></textarea>
+                    <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
+                        <button class="btn btn-info btn-lg btn-block" id="btn-chat" ng-click="sendMessage()" >Send</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                  
                 </div>
               </div>
             </div>
                  <div class="panel-footer">
+
+                
                         
                         <span class="pull-right">
-                           
                         </span>
                     </div>
             
