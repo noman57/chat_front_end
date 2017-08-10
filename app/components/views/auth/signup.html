@@ -96,12 +96,12 @@
                       <div class="clearfix">&nbsp;</div>
                       <div class="inputGroup">
                         <input id="su_matchingPassword" type="password" name="matchingPassword" class="form-control input-md"
-                               ng-model="user.matchingPassword" ufl-password-matcher="su_password" required>
+                               ng-model="user.matchingPassword" password-match="user.password" required>
                         <span class="inputBar"></span>
                         <label translate="global.form.confirmPassword">Confirm Password</label>
-                        <span class="text-danger"  ng-show="signupForm.matchingPassword.$dirty && (signupForm.matchingPassword.$invalid || signupform.matchingPassword.$error.passwordMatch)">
+                        <span class="text-danger"  ng-show="signupForm.matchingPassword.$dirty && (signupForm.matchingPassword.$invalid || signupForm.matchingPassword.$error.passwordMatch)">
                           <span ng-show="signupForm.matchingPassword.$error.required" translate="global.messages.validate.confirmPassword.required">Confirm Password required.</span>
-                          <span ng-show="signupForm.matchingPassword.$error.passwordMatch" translate="global.messages.validate.confirmPassword.match">   Passwords don't match.  </span>
+                          <span ng-show="(user.matchingPassword!=user.password)" translate="global.messages.validate.confirmPassword.match">   Passwords don't match.  </span>
                         </span>
                       </div>
                     </div>
